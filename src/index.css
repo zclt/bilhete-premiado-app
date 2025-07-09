@@ -80,12 +80,12 @@ ul {
   padding: 0;
   margin: 0;
   display: inline-flex;
-  gap: 10px;  
+  gap: 5px;  
 }
 
 li {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background-color: #11354d;
   border: 2px solid #11354d;

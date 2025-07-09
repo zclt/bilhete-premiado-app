@@ -47,7 +47,7 @@ function App() {
         resultados={resultados?.quina?.dezenas} 
         apostas={values} />
 
-      <footer style={{ position: 'absolute', marginLeft: '120px', bottom: 0, textAlign: 'center', padding: '10px' }}>
+      <footer style={{ bottom: 0, textAlign: 'center', padding: '10px' }}>
         <a href="https://link.mercadopago.com.br/bilhetepremiadoapp" target="_blank" rel="noopener noreferrer">
           Contribua com o projeto
         </a>
