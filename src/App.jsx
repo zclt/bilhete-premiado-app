@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
-import api from './services/api';
+import Dezenas from './components/Dezenas'
+import Aposta from './components/Aposta'
+import api from './services/api'
 import './App.css'
-
 function App() {
   const [resultados, setResultados] = useState({})
   const [values, setValues] = useState(Array(6).fill(''));
@@ -12,60 +13,34 @@ function App() {
         .catch(error => console.error(error));
     }, []);
 
-  useEffect(() => {
-    console.log(values);
-    resultados?.megasena?.dezenas.map(d => {
-      if(values.includes(d)) {
-        console.log(d);
-      }
-    });
-    
-  }, [values]);
-
   const handleChange = (index, event) => {
     const newValues = [...values];
     newValues[index] = event.target.value;
     setValues(newValues);
   };
 
-  const verificaAposta = (dezena) => {
-    return values.includes(dezena);
-  }
-
   return (
     <>
-      <div style={{ display: 'flex', gap: '8px', padding: '20px' }}>
-        {values.map((val, idx) => (
-          <input
-            key={idx}
-            value={val}
-            onChange={(e) => handleChange(idx, e)}
-            maxLength={2}
-            style={{
-              width: '3ch',
-              padding: '4px',
-              border: '2px solid black',
-              textAlign: 'center'
-            }}
-          />
-        ))}
-      </div>
+      <Aposta values={values} handleChange={handleChange}/>
 
-      <strong>Megasena</strong>
-      <span>{resultados?.megasena?.dataApuracao}</span>
-      <ul>
-        {resultados?.megasena?.dezenas.map((r, i) => (
-          <li key={i} className={verificaAposta(r) ? "acerto" : ""}>{r}</li>
-        ))}
-      </ul>
+      <Dezenas 
+        nome="mega-sena" 
+        data={resultados?.megasena?.dataApuracao} 
+        resultados={resultados?.megasena?.dezenas} 
+        apostas={values} />
 
-      <strong>Quina</strong>
-      <span>{resultados?.quina?.dataApuracao}</span>
-      <ul>
-        {resultados?.quina?.dezenas.map((r, i) => (
-          <li key={i} className={verificaAposta(r) ? "acerto" : ""}>{r}</li>
-        ))}
-      </ul>
+      <Dezenas 
+        nome="quina" 
+        data={resultados?.quina?.dataApuracao} 
+        resultados={resultados?.quina?.dezenas} 
+        apostas={values} />
+
+      <footer style={{ position: 'absolute', bottom: 0, textAlign: 'center', padding: '10px' }}>
+        <a href="https://link.mercadopago.com.br/bilhetepremiadoapp" target="_blank" rel="noopener noreferrer">
+          Contribua com o projeto
+        </a>
+      </footer>
+      
     </>
   )
 }
