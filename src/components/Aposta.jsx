@@ -12,11 +12,11 @@ export default function Aposta({ values, handleChange, inputsRef }) {
                     onChange={(e) => handleChange(idx, e)}
                     maxLength={2}
                     style={{
-                        fontSize: '21px',
-                        borderRadius: '21px',
-                        padding: '6px',
+                        fontSize: '15px',
+                        borderRadius: '15px',
+                        padding: '4px',
                         width: '2ch',                        
-                        border: '2px solid black',
+                        border: '2px solid #000000af',
                         textAlign: 'center'
                     }}
                     type="number"
