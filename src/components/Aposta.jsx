@@ -1,4 +1,4 @@
-export default function Aposta({ values, handleChange }) {    
+export default function Aposta({ values, handleChange, inputsRef }) {    
     return (
         <>
             <h1>Digite sua aposta</h1>
@@ -8,6 +8,7 @@ export default function Aposta({ values, handleChange }) {
                     id={idx}
                     key={idx}
                     value={val}
+                    ref={(el) => (inputsRef.current[idx] = el)}
                     onChange={(e) => handleChange(idx, e)}
                     maxLength={2}
                     style={{
@@ -18,6 +19,7 @@ export default function Aposta({ values, handleChange }) {
                         border: '2px solid black',
                         textAlign: 'center'
                     }}
+                    type="number"
                 />))}
             </div>
         </>
