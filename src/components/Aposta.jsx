@@ -12,10 +12,10 @@ export default function Aposta({ values, handleChange, inputsRef }) {
                     onChange={(e) => handleChange(idx, e)}
                     maxLength={2}
                     style={{
-                        fontSize: '18px',
-                        borderRadius: '18px',
-                        padding: '0px',
-                        width: '3ch',                        
+                        fontSize: '21px',
+                        borderRadius: '21px',
+                        padding: '6px',
+                        width: '2ch',                        
                         border: '2px solid black',
                         textAlign: 'center'
                     }}

@@ -3,9 +3,10 @@ import Dezenas from './components/Dezenas'
 import Aposta from './components/Aposta'
 import api from './services/api'
 import './App.css'
+
 function App() {
   const [resultados, setResultados] = useState({})
-  const [values, setValues] = useState(Array(6).fill(''));
+  const [values, setValues] = useState(Array(9).fill(''));
   const inputsRef = useRef([]);
 
   useEffect(() => {
@@ -31,6 +32,7 @@ function App() {
 
   return (
     <>
+      <img src="trevo.svg" alt="Trevo" width={64} />
       <Aposta values={values} handleChange={handleChange} inputsRef={inputsRef}/>
 
       <Dezenas 
@@ -45,10 +47,13 @@ function App() {
         resultados={resultados?.quina?.dezenas} 
         apostas={values} />
 
-      <footer style={{ bottom: 0, textAlign: 'center', padding: '10px' }}>
+      <footer style={{ position: 'absolute', marginLeft: '120px', bottom: 0, textAlign: 'center', padding: '10px' }}>
         <a href="https://link.mercadopago.com.br/bilhetepremiadoapp" target="_blank" rel="noopener noreferrer">
           Contribua com o projeto
         </a>
+        <div style={{ fontSize: '10px', paddingTop: '20px' }}>
+          <i>fonte: <a href="https://loterias.caixa.gov.br/" target="_blank" rel="noopener noreferrer">https://loterias.caixa.gov.br/</a></i>
+        </div>
       </footer>
       
     </>

@@ -13,7 +13,7 @@
 }
 
 body {
-  background-color: rgba(191, 206, 191, 0.404);
+  background-color: #ffffff;
 }
 
 a {
@@ -100,7 +100,7 @@ li {
 
 .acerto {
   background-color: blueviolet;
-  border: 2px solid;
+  border: 2px solid #11354d;
 }
 
 strong {
