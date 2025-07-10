@@ -4,6 +4,8 @@ import Aposta from './components/Aposta'
 import api from './services/api'
 import './App.css'
 
+const STORAGE_KEY = 'meu-bilhete-premiado';
+
 function App() {
   const [resultados, setResultados] = useState({})
   const [values, setValues] = useState(Array(9).fill(''));
@@ -14,6 +16,26 @@ function App() {
         .then(response => setResultados(response.data))
         .catch(error => console.error(error));
     }, []);
+
+  useEffect(() => {
+    const salvo = localStorage.getItem(STORAGE_KEY);
+    if (salvo) {
+      try {
+        const parsed = JSON.parse(salvo);
+        if (Array.isArray(parsed) && parsed.length === 9) {
+          setValues(parsed);
+        }
+      } catch (e) {
+        console.warn('Erro ao recuperar do localStorage:', e);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    if(!values.every(v => v === '')) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(values));
+    }
+  }, [values]);
 
   const handleChange = (index, event) => {
     const raw = event.target.value;
