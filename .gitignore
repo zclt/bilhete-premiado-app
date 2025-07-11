@@ -22,5 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-*.lock
-*-lock.json
+# Lock files (exceto package-lock.json que deve ser versionado)
+yarn.lock
+pnpm-lock.yaml
+
+coverage
+.tool-versions

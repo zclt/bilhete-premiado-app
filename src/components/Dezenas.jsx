@@ -8,7 +8,7 @@ export default function Dezenas({ nome, data, resultados, apostas }) {
                     <li key={i} className={apostas.includes(r) ? "acerto" : ""}>{r}</li>
                 ))}
             </ul>
-            <div>{resultados?.every(valor => apostas?.includes(valor)) ? <strong>Ganhou !</strong> : <></>}</div>
+            <div>{resultados?.length > 0 && resultados.every(valor => apostas?.includes(valor)) ? <strong>Ganhou !</strong> : <></>}</div>
         </>
     )
 }
