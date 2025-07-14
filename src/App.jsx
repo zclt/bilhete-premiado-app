@@ -34,6 +34,8 @@ function App() {
   useEffect(() => {
     if(!values.every(v => v === '')) {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(values));
+    } else {
+      localStorage.removeItem(STORAGE_KEY);
     }
   }, [values]);
 
@@ -56,7 +58,9 @@ function App() {
     <>
       <img src="trevo.svg" alt="Trevo" width={64} />
       <Aposta values={values} handleChange={handleChange} inputsRef={inputsRef}/>
-
+      <div>
+          <button onClick={() => {setValues(Array(9).fill(''))}}>Limpar</button>
+      </div>
       <Dezenas 
         nome="mega-sena" 
         data={resultados?.megasena?.dataApuracao} 
