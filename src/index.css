@@ -2,7 +2,7 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color: #213547;
+  color: #2da84c;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -16,7 +16,7 @@ body {
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #2da84c;
   text-decoration: inherit;
 }
 a:hover {
@@ -24,6 +24,7 @@ a:hover {
 }
 
 body {
+  background-image: url('background.svg');
   margin: 0;
   display: flex;
   place-items: center;
@@ -48,13 +49,14 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #2da84c;
   cursor: pointer;
   transition: border-color 0.25s;
   color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
 button:hover {
-  border-color: #646cff;
+  background-color: #535bf2;
 }
 button:focus,
 button:focus-visible {
@@ -73,20 +75,20 @@ li {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: #11354d;
-  border: 2px solid #11354d;
+  background-color: #2da84c;
+  border: 2px solid #0d3316;
   color: whitesmoke;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
   font-family: sans-serif;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);  
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
 
 .acerto {
-  background-color: blueviolet;
-  border: 2px solid #11354d;
+  background-color: rgb(60, 117, 42);
+  border: 2px solid #0d3316;
 }
 
 strong {

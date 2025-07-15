@@ -12,9 +12,12 @@ export default function Aposta({ values, handleChange, inputsRef }) {
             borderRadius: '15px',
             padding: '4px',
             width: '2ch',
-            border: '2px solid #000000af',
+            border: '2px solid #2da84c',
             textAlign: 'center',
-            margin: '4px'
+            margin: '4px',
+            boxShadow: '0 2px 5px #0d3316',
+            fontWeight: 'bold',
+            color: '#2da84c'
             }}
             type="number"
         />
