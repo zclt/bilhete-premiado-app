@@ -72,7 +72,7 @@ describe('Aposta Component', () => {
         borderRadius: '15px',
         padding: '4px',
         width: '2ch',
-        border: '2px solid #000000af',
+        border: '2px solid #2da84c',
         textAlign: 'center'
       })
     })
