@@ -1,4 +1,4 @@
-export default function Aposta({ values, handleChange, inputsRef }) {
+export default function Aposta({ values = [], handleChange, inputsRef }) {
     const inputElements = values.map((val, idx) => (
         <input
             key={idx}
