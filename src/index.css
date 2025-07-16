@@ -24,7 +24,6 @@ a:hover {
 }
 
 body {
-  background-image: url('background.svg');
   margin: 0;
   display: flex;
   place-items: center;
