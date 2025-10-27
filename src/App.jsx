@@ -74,8 +74,9 @@ function App() {
         apostas={values} />
 
       <footer style={{ bottom: 0, textAlign: 'center', padding: '10px' }}>
+        <hr style={{ margin: '10px 0', borderStyle: 'dashed', borderColor: '#2da84c' }} />
         <a href="https://link.mercadopago.com.br/bilhetepremiadoapp" target="_blank" rel="noopener noreferrer">
-          Contribua com o projeto
+          👉 Contribua com o projeto
         </a>
         <div style={{ fontSize: '10px', paddingTop: '20px' }}>
           <i>fonte: <a href="https://loterias.caixa.gov.br/" target="_blank" rel="noopener noreferrer">https://loterias.caixa.gov.br/</a></i>
