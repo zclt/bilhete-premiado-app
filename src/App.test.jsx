@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react'
+import { render, screen, waitFor, act } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import App from './App'
 import api from './services/api'
@@ -26,7 +26,9 @@ describe('App', () => {
   })
 
   it('renderiza o título e os componentes principais', async () => {
-    render(<App />)
+    await act(async () => {
+      render(<App />)
+    })
     expect(screen.getByAltText('Trevo')).toBeInTheDocument()
     expect(screen.getByText('Digite sua aposta')).toBeInTheDocument()
     // Aguarda carregamento dos resultados
@@ -37,7 +39,9 @@ describe('App', () => {
   })
 
   it('renderiza dezenas e datas vindas da API', async () => {
-    render(<App />)
+    await act(async () => {
+      render(<App />)
+    })
     await waitFor(() => {
       expect(screen.getByText('10/10/2023')).toBeInTheDocument()
       expect(screen.getByText('11/10/2023')).toBeInTheDocument()
@@ -51,15 +55,24 @@ describe('App', () => {
   })
 
   it('salva valores no localStorage ao digitar', async () => {
-    render(<App />)
+    await act(async () => {
+      render(<App />)
+    })
     const inputs = await screen.findAllByRole('spinbutton')
-    await userEvent.type(inputs[0], '12')
+    await act(async () => {
+      await userEvent.type(inputs[0], '12')
+    })
     expect(localStorage.setItem).toHaveBeenCalled()
   })
 
-  it('renderiza links do rodapé', () => {
-    render(<App />)
-    expect(screen.getByText('Contribua com o projeto')).toHaveAttribute('href', expect.stringContaining('mercadopago'))
-    expect(screen.getByText('https://loterias.caixa.gov.br/')).toHaveAttribute('href', 'https://loterias.caixa.gov.br/')
+  it('renderiza links do rodapé', async () => {
+    await act(async () => {
+      render(<App />)
+    })
+    // Aguarda que todos os useEffect sejam executados
+    await waitFor(() => {
+      expect(screen.getByText('👉 Contribua com o projeto')).toHaveAttribute('href', expect.stringContaining('mercadopago'))
+      expect(screen.getByText('https://loterias.caixa.gov.br/')).toHaveAttribute('href', 'https://loterias.caixa.gov.br/')
+    })
   })
 }) 
