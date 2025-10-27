@@ -71,7 +71,7 @@ describe('App', () => {
     })
     // Aguarda que todos os useEffect sejam executados
     await waitFor(() => {
-      expect(screen.getByText('Contribua com o projeto')).toHaveAttribute('href', expect.stringContaining('mercadopago'))
+      expect(screen.getByText('👉 Contribua com o projeto')).toHaveAttribute('href', expect.stringContaining('mercadopago'))
       expect(screen.getByText('https://loterias.caixa.gov.br/')).toHaveAttribute('href', 'https://loterias.caixa.gov.br/')
     })
   })
