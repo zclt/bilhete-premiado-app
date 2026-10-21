@@ -149,7 +149,7 @@ bilhete-premiado-app/
 Os resultados são buscados diretamente da **API oficial da Caixa Econômica Federal**:
 
 ```
-https://servicebus2.caixa.gov.br/portaldeloterias/api/home/ultimos-resultados
+https://servicebus3.caixa.gov.br/portaldeloterias/api/home/ultimos-resultados
 ```
 
 Jogos suportados: **Mega-Sena** e **Quina**.
